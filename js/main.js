@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setFooterYear();
   setupHeaderScrollState();
   setupScrollReveal();
+  setupPizzaCardFlip();
 });
 
 /* ---------- Telèfon, WhatsApp, adreça i mapa ---------- */
@@ -72,16 +73,60 @@ function renderMenu() {
   `).join("");
 }
 
+// Foto que es mostra al revers de la targeta quan la pizza encara no
+// té fotografia pròpia assignada (camp "image" a MENU, js/data.js).
+const DEFAULT_PIZZA_IMAGE = "assets/img/hero-mobile.jpg";
+
 function renderMenuCard(item, index) {
+  const image = item.image || DEFAULT_PIZZA_IMAGE;
   return `
-    <article class="menu-card reveal" style="${staggerStyle(index)}">
-      <div class="menu-card-head">
-        <h4 class="menu-card-name">${escapeHtml(item.name)}</h4>
-        <span class="menu-card-price">${escapeHtml(item.price)}</span>
+    <article class="pizza-card reveal" style="${staggerStyle(index)}" tabindex="0" role="button" aria-pressed="false" aria-label="Gira la targeta per veure una foto de ${escapeAttr(item.name)}">
+      <div class="pizza-card-inner">
+        <div class="pizza-card-face pizza-card-front">
+          <span class="pizza-card-flip-hint" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M17.65 6.35A7.95 7.95 0 0 0 12 4V1L8 5l4 4V6c1.66 0 3.14.67 4.22 1.78A5.98 5.98 0 0 1 18 12c0 3.31-2.69 6-6 6a5.98 5.98 0 0 1-4.22-1.78l-1.42 1.42A7.95 7.95 0 0 0 12 20c4.42 0 8-3.58 8-8 0-2.21-.9-4.21-2.35-5.65z"/></svg>
+          </span>
+          <div class="menu-card-head">
+            <h4 class="menu-card-name">${escapeHtml(item.name)}</h4>
+            <span class="menu-card-price">${escapeHtml(item.price)}</span>
+          </div>
+          <p class="menu-card-ingredients">${escapeHtml(item.ingredients)}</p>
+        </div>
+        <div class="pizza-card-face pizza-card-back">
+          <img src="${escapeAttr(image)}" alt="" loading="lazy" />
+          <div class="pizza-card-back-overlay">
+            <span class="pizza-card-back-name">${escapeHtml(item.name)}</span>
+          </div>
+        </div>
       </div>
-      <p class="menu-card-ingredients">${escapeHtml(item.ingredients)}</p>
     </article>
   `;
+}
+
+/* ---------- Gir 3D de les targetes de pizza ---------- */
+// El gir amb el ratolí ja el fa el CSS (:hover). Aquí només gestionem
+// l'activació amb tocar (mòbil/tàctil) i amb teclat (accessibilitat).
+function setupPizzaCardFlip() {
+  const container = document.getElementById("menu-list");
+  if (!container) return;
+
+  container.addEventListener("click", (event) => {
+    const card = event.target.closest(".pizza-card");
+    if (card) toggleCardFlip(card);
+  });
+
+  container.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter" && event.key !== " ") return;
+    const card = event.target.closest(".pizza-card");
+    if (!card) return;
+    event.preventDefault();
+    toggleCardFlip(card);
+  });
+}
+
+function toggleCardFlip(card) {
+  const isFlipped = card.classList.toggle("is-flipped");
+  card.setAttribute("aria-pressed", String(isFlipped));
 }
 
 /* ---------- Extres ---------- */

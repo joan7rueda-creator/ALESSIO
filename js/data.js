@@ -59,14 +59,17 @@ const CONFIG = {
 /* =========================================================
    2. CARTA DE PIZZES
    Cada categoria té un títol i una llista d'items.
-   Cada item: { name, price, ingredients }
+   Cada item: { name, price, ingredients, image? }
    El preu es mostra tal qual (pot incloure "€").
+   El camp "image" és opcional (ruta a assets/img/...): és la foto que
+   es veu en girar la targeta. Si no s'indica, es mostra una foto
+   genèrica de pizza mentre no tinguis la fotografia real d'aquell plat.
    ========================================================= */
 const MENU = [
   {
     category: "Pizzes clàssiques",
     items: [
-      { name: "Margherita", price: "9€", ingredients: "Salsa de tomàquet, mozzarella, alfàbrega." },
+      { name: "Margherita", price: "9€", ingredients: "Salsa de tomàquet, mozzarella, alfàbrega.", image: "assets/img/hero.jpg" },
       { name: "Marinara", price: "9,50€", ingredients: "Salsa de tomàquet, tomàquet xerri, all, pebre negre i alfàbrega." },
       { name: "Romana", price: "11€", ingredients: "Salsa de tomàquet, mozzarella, pernil dolç, orenga." },
       { name: "Diavola", price: "11€", ingredients: "Salsa de tomàquet, mozzarella, spianata picant." },

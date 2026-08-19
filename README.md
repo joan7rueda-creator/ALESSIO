@@ -23,7 +23,9 @@ assets/img/          Fotografies (logo, hero, etc.) — encara pendents d'afegir
 Obre `js/data.js` i edita:
 
 - **`CONFIG`** — telèfon, WhatsApp, adreça, horaris, xarxes socials i mapa.
-- **`MENU`** — pizzes de la carta, agrupades per categoria.
+- **`MENU`** — pizzes de la carta, agrupades per categoria. Cada pizza pot incloure
+  un camp `image` opcional (foto que es veu en girar la targeta); sense ell es
+  mostra una foto genèrica de pizza.
 - **`EXTRAS`** — ingredients addicionals i el seu preu.
 - **`PRODUCTS`** — productes italians per emportar (pasta, embotits, formatges, vins...).
   Actualment buit; afegeix objectes `{ name, description, price, image? }`.
@@ -41,6 +43,11 @@ Obre `js/data.js` i edita:
 - [x] Foto de fons del Hero (`assets/img/hero.jpg` per escriptori, `hero-mobile.jpg` per mòbil)
 - [ ] Confirmar si el número de WhatsApp és el mateix que el de telèfon
       (ara mateix s'utilitza `602 54 57 89` per a totes dues coses — `CONFIG.whatsappNumber`)
+- [x] Targetes de pizza amb gir 3D (flip): revers amb foto en passar el ratolí,
+      tocar (mòbil) o Enter/espai (teclat). Fotos reals pendents: de moment totes
+      les pizzes (excepte la Margherita) mostren una foto genèrica de pizza al
+      revers; afegeix `image: "assets/img/nom.jpg"` a cada pizza de `MENU` quan
+      tinguis la fotografia real.
 - [ ] Més fotografies pròpies (pizzes, productes, local...) a `assets/img/`
 - [ ] Llistat definitiu de productes italians per emportar (`PRODUCTS` a `js/data.js`)
 - [ ] Substituir el logo actual (extret d'una captura/gravació de pantalla) per l'arxiu
