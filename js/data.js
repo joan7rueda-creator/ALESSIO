@@ -20,31 +20,29 @@ const CONFIG = {
   city: "Sant Celoni",
   province: "Barcelona",
 
-  // TODO: substitueix per les dades reals del negoci.
-  address: "Carrer Major, XX, 08470 Sant Celoni (Barcelona)",
-  phoneDisplay: "93 000 00 00",
-  phoneLink: "+34930000000", // format internacional, sense espais
-  whatsappNumber: "34600000000", // format internacional, sense el "+" ni espais
+  address: "Carrer de l'Abat Oliba, 2, 08470 Sant Celoni (Barcelona)",
+  phoneDisplay: "602 54 57 89",
+  phoneLink: "+34602545789", // format internacional, sense espais
+  // TODO: confirma si el número de WhatsApp és el mateix que el de telèfon;
+  // de moment s'utilitza el mateix número per a totes dues coses.
+  whatsappNumber: "34602545789", // format internacional, sense el "+" ni espais
   whatsappMessage: "Hola! Voldria fer una comanda per emportar a Pizzeria di Alessio.",
 
-  // Enllaç d'incrustació de Google Maps.
-  // TODO: quan tinguis l'adreça exacta, ves a Google Maps > Comparteix > Incrusta un mapa
-  // i enganxa aquí la URL del "src" de l'iframe que et proporcioni Google.
-  mapsEmbedSrc: "https://www.google.com/maps?q=Sant+Celoni,+Barcelona&output=embed",
+  // Enllaç d'incrustació de Google Maps amb l'adreça del local.
+  mapsEmbedSrc: "https://www.google.com/maps?q=Carrer+de+l%27Abat+Oliba%2C+2%2C+08470+Sant+Celoni%2C+Barcelona&output=embed",
 
   // Enllaç normal de Google Maps (per al botó "Com arribar-hi").
-  mapsLinkUrl: "https://www.google.com/maps/search/?api=1&query=Sant+Celoni+Barcelona",
+  mapsLinkUrl: "https://www.google.com/maps/search/?api=1&query=Carrer+de+l%27Abat+Oliba+2%2C+08470+Sant+Celoni%2C+Barcelona",
 
   // Horaris d'obertura. Posa "null" en "close" els dies que estigui tancat.
-  // TODO: revisa i ajusta els horaris reals.
   hours: [
     { day: "Dilluns", open: null, close: null },
-    { day: "Dimarts", open: "19:00", close: "22:30" },
-    { day: "Dimecres", open: "19:00", close: "22:30" },
-    { day: "Dijous", open: "19:00", close: "22:30" },
-    { day: "Divendres", open: "19:00", close: "23:00" },
-    { day: "Dissabte", open: "13:00", close: "23:00" },
-    { day: "Diumenge", open: "13:00", close: "22:30" },
+    { day: "Dimarts", open: "18:00", close: "22:30" },
+    { day: "Dimecres", open: "18:00", close: "22:30" },
+    { day: "Dijous", open: "18:00", close: "22:30" },
+    { day: "Divendres", open: "18:00", close: "23:00" },
+    { day: "Dissabte", open: "18:00", close: "23:00" },
+    { day: "Diumenge", open: "18:00", close: "22:30" },
   ],
 
   // Xarxes socials. Deixa el camp buit ("") per amagar el botó corresponent.
