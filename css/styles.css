@@ -247,19 +247,26 @@ p {
 .hero {
   position: relative;
   padding: 90px 0 70px;
+  /* Mòbil: imatge més lleugera (assets/img/hero-mobile.jpg) per estalviar dades */
   background:
-    linear-gradient(rgba(44, 24, 16, 0.6), rgba(44, 24, 16, 0.72)),
-    repeating-linear-gradient(135deg, #7a3420 0px, #7a3420 2px, #6b2c1a 2px, #6b2c1a 40px);
+    linear-gradient(rgba(38, 20, 13, 0.68), rgba(38, 20, 13, 0.8)),
+    url("../assets/img/hero-mobile.jpg");
+  background-size: cover;
+  background-position: center 65%;
   background-blend-mode: multiply;
   color: var(--color-white);
   text-align: center;
   overflow: hidden;
 }
 
-/* Quan afegeixis la teva foto de fons, descomenta i edita la línia següent
-   dins de .hero (o afegeix-la en línia amb style="background-image:..."):
-   background-image: url("../assets/img/hero.jpg"); background-size: cover; background-position: center;
-*/
+@media (min-width: 700px) {
+  .hero {
+    /* Escriptori/tauleta: imatge en major resolució (assets/img/hero.jpg) */
+    background-image:
+      linear-gradient(rgba(38, 20, 13, 0.68), rgba(38, 20, 13, 0.8)),
+      url("../assets/img/hero.jpg");
+  }
+}
 
 .hero-eyebrow {
   text-transform: uppercase;
