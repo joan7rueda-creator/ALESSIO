@@ -14,6 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
   renderSocial();
   setupNavToggle();
   setFooterYear();
+  setupHeaderScrollState();
+  setupScrollReveal();
 });
 
 /* ---------- Telèfon, WhatsApp, adreça i mapa ---------- */
@@ -62,7 +64,7 @@ function renderMenu() {
 
   container.innerHTML = MENU.map((category) => `
     <div class="menu-category">
-      <h3 class="menu-category-title">${escapeHtml(category.category)}</h3>
+      <h3 class="menu-category-title reveal">${escapeHtml(category.category)}</h3>
       <div class="menu-grid">
         ${category.items.map(renderMenuCard).join("")}
       </div>
@@ -70,9 +72,9 @@ function renderMenu() {
   `).join("");
 }
 
-function renderMenuCard(item) {
+function renderMenuCard(item, index) {
   return `
-    <article class="menu-card">
+    <article class="menu-card reveal" style="${staggerStyle(index)}">
       <div class="menu-card-head">
         <h4 class="menu-card-name">${escapeHtml(item.name)}</h4>
         <span class="menu-card-price">${escapeHtml(item.price)}</span>
@@ -87,8 +89,8 @@ function renderExtras() {
   const container = document.getElementById("extras-list");
   if (!container) return;
 
-  container.innerHTML = EXTRAS.map((group) => `
-    <div class="extras-group">
+  container.innerHTML = EXTRAS.map((group, index) => `
+    <div class="extras-group reveal" style="${staggerStyle(index)}">
       <h4 class="extras-group-title">${escapeHtml(group.group)}</h4>
       <div class="extras-items">
         ${group.items.map((item) => `
@@ -112,8 +114,8 @@ function renderProducts() {
   }
 
   if (emptyMsg) emptyMsg.hidden = true;
-  container.innerHTML = PRODUCTS.map((product) => `
-    <article class="product-card">
+  container.innerHTML = PRODUCTS.map((product, index) => `
+    <article class="product-card reveal" style="${staggerStyle(index)}">
       <div class="product-card-head">
         <h3 class="product-card-name">${escapeHtml(product.name)}</h3>
         <span class="product-card-price">${escapeHtml(product.price)}</span>
@@ -128,8 +130,8 @@ function renderDesserts() {
   const container = document.getElementById("desserts-list");
   if (!container) return;
 
-  container.innerHTML = DESSERTS.map((dessert) => `
-    <article class="product-card">
+  container.innerHTML = DESSERTS.map((dessert, index) => `
+    <article class="product-card reveal" style="${staggerStyle(index)}">
       <div class="product-card-head">
         <h3 class="product-card-name">${escapeHtml(dessert.name)}</h3>
         <span class="product-card-price">${escapeHtml(dessert.price)}</span>
@@ -190,6 +192,49 @@ function setupNavToggle() {
       toggle.setAttribute("aria-expanded", "false");
     });
   });
+}
+
+/* ---------- Capçalera: ombra en fer scroll ---------- */
+function setupHeaderScrollState() {
+  const header = document.querySelector(".site-header");
+  if (!header) return;
+
+  const updateState = () => {
+    header.classList.toggle("is-scrolled", window.scrollY > 12);
+  };
+
+  updateState();
+  window.addEventListener("scroll", updateState, { passive: true });
+}
+
+/* ---------- Aparició d'elements en fer scroll ---------- */
+function staggerStyle(index, stepMs = 60, maxSteps = 6) {
+  const delay = (index % maxSteps) * stepMs;
+  return `--reveal-delay: ${delay}ms`;
+}
+
+function setupScrollReveal() {
+  const elements = document.querySelectorAll(".reveal");
+  if (!elements.length) return;
+
+  if (!("IntersectionObserver" in window)) {
+    elements.forEach((el) => el.classList.add("is-visible"));
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+  );
+
+  elements.forEach((el) => observer.observe(el));
 }
 
 /* ---------- Any actual al footer ---------- */
