@@ -13,7 +13,8 @@
   <meta property="og:description" content="Pizza artesanal italiana per emportar a Sant Celoni. Carta completa, productes italians i comandes per telèfon o WhatsApp." />
   <meta property="og:locale" content="ca_ES" />
 
-  <link rel="icon" href="data:," />
+  <link rel="icon" type="image/png" href="assets/img/favicon-32.png" />
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
 
   <!-- Tipografies: Fraunces (títols, caràcter artesanal) + Mulish (text, alta llegibilitat) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -28,12 +29,14 @@
   <header class="site-header" id="top">
     <div class="container header-inner">
       <a class="brand" href="#top">
+        <img class="brand-logo" src="assets/img/logo.png" alt="Pizzeria di Alessio" width="415" height="430" />
         <span class="brand-name">Pizzeria <em>di Alessio</em></span>
       </a>
 
       <nav class="main-nav" id="main-nav" aria-label="Navegació principal">
         <a href="#carta">Carta</a>
         <a href="#productes">Productes</a>
+        <a href="#postres">Postres</a>
         <a href="#ubicacio">Ubicació i horaris</a>
         <a href="#contacte">Contacte</a>
       </nav>
@@ -115,6 +118,17 @@
       </div>
     </section>
 
+    <!-- ===================== POSTRES ARTESANALS ===================== -->
+    <section class="section" id="postres">
+      <div class="container">
+        <p class="section-eyebrow">Per acabar de gust</p>
+        <h2 class="section-title">Postres artesanals</h2>
+        <p class="section-intro">Tots els nostres postres són artesanals.</p>
+
+        <div id="desserts-list" class="products-list"><!-- Generat per JS a partir de DESSERTS (js/data.js) --></div>
+      </div>
+    </section>
+
     <!-- ===================== UBICACIÓ I HORARIS ===================== -->
     <section class="section" id="ubicacio">
       <div class="container location-grid">
@@ -175,6 +189,7 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-brand">
+        <img class="footer-logo" src="assets/img/logo.png" alt="Pizzeria di Alessio" width="415" height="430" loading="lazy" />
         <p class="brand-name">Pizzeria <em>di Alessio</em></p>
         <p id="footer-address">Carrer Major, XX, 08470 Sant Celoni (Barcelona)</p>
         <p id="footer-phone"><a href="tel:+34930000000">93 000 00 00</a></p>

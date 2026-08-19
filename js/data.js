@@ -6,6 +6,7 @@
  * - Pizzes de la carta -> array MENU
  * - Extres (ingredients addicionals) -> array EXTRAS
  * - Productes italians per emportar -> array PRODUCTS
+ * - Postres artesanals -> array DESSERTS
  *
  * No cal tocar cap altre fitxer (.html / .css / .js) per afegir,
  * eliminar o editar preus, noms o descripcions.
@@ -177,4 +178,18 @@ const EXTRAS = [
 const PRODUCTS = [
   // Exemple (elimina'l o edita'l quan tinguis els productes reals):
   // { name: "Pasta fresca all'uovo", description: "Tagliatelle artesanals italianes, 250g.", price: "4,50€" },
+];
+
+/* =========================================================
+   5. POSTRES ARTESANALS
+   Mateix format que PRODUCTS: { name, description, price }
+   ========================================================= */
+const DESSERTS = [
+  { name: "Tiramisù de pistacchio", price: "6€", description: "Crumble trencat, mascarpone, crema de festuc de Bronte." },
+  { name: "Pan di stelle", price: "6€", description: "Galeta de xocolata, mascarpone, nutella, nata." },
+  { name: "Ricotta e pera", price: "6€", description: "Galeta amb ricotta (formatge d'ovella) i trossos de pera fresca." },
+  { name: "Cheese cake", price: "6€", description: "Base de crumble amb crema de formatge Philadelphia i gelatina de fruits del bosc." },
+  { name: "Mousse Selva negra", price: "6€", description: "Xocolata fundent negre amb cor de cirera." },
+  { name: "Mousse Gianduiotto", price: "6€", description: "Mousse de xocolata amb llet glacejat amb avellanes del Piemont." },
+  { name: "Cannolo Siciliano", price: "5€", description: "Massa fregida farcida de ricotta." },
 ];

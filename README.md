@@ -22,18 +22,23 @@ Obre `js/data.js` i edita:
 - **`EXTRAS`** — ingredients addicionals i el seu preu.
 - **`PRODUCTS`** — productes italians per emportar (pasta, embotits, formatges, vins...).
   Actualment buit; afegeix objectes `{ name, description, price }`.
+- **`DESSERTS`** — postres artesanals, mateix format que `PRODUCTS`.
 
 ## Pendent d'afegir (marcat amb `TODO` a `js/data.js`)
 
-- [ ] Telèfon i número de WhatsApp reals (`CONFIG.phoneDisplay`, `phoneLink`, `whatsappNumber`)
-- [ ] Adreça exacta (`CONFIG.address`)
-- [ ] URL d'incrustació de Google Maps amb l'adreça real (`CONFIG.mapsEmbedSrc`) — es
-      genera des de Google Maps: *Comparteix → Incrusta un mapa*
-- [ ] Horaris definitius (`CONFIG.hours`)
-- [ ] Logo i fotografies pròpies a `assets/img/`
+- [x] Telèfon (`CONFIG.phoneDisplay`, `phoneLink`) i adreça (`CONFIG.address`) reals
+- [x] Mapa de Google Maps amb l'adreça real (`CONFIG.mapsEmbedSrc`)
+- [x] Horaris definitius (`CONFIG.hours`)
+- [x] Logo (`assets/img/logo.png`, amb favicon i apple-touch-icon generats)
+- [x] Postres artesanals (`DESSERTS` a `js/data.js`)
+- [ ] Confirmar si el número de WhatsApp és el mateix que el de telèfon
+      (ara mateix s'utilitza `602 54 57 89` per a totes dues coses — `CONFIG.whatsappNumber`)
+- [ ] Fotografies pròpies (hero, pizzes...) a `assets/img/`
       - Un cop tinguis la foto del hero, afegeix-la a `assets/img/hero.jpg` i activa la
         línia `background-image` comentada a `.hero` dins de `css/styles.css`.
-- [ ] Llistat definitiu de productes italians (`PRODUCTS` a `js/data.js`)
+- [ ] Llistat definitiu de productes italians per emportar (`PRODUCTS` a `js/data.js`)
+- [ ] Substituir el logo actual (extret d'una captura/gravació de pantalla) per l'arxiu
+      original en alta qualitat quan el tinguis disponible
 
 ## Provar en local
 

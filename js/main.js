@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderMenu();
   renderExtras();
   renderProducts();
+  renderDesserts();
   renderHours();
   renderSocial();
   setupNavToggle();
@@ -118,6 +119,22 @@ function renderProducts() {
         <span class="product-card-price">${escapeHtml(product.price)}</span>
       </div>
       <p class="product-card-description">${escapeHtml(product.description)}</p>
+    </article>
+  `).join("");
+}
+
+/* ---------- Postres artesanals ---------- */
+function renderDesserts() {
+  const container = document.getElementById("desserts-list");
+  if (!container) return;
+
+  container.innerHTML = DESSERTS.map((dessert) => `
+    <article class="product-card">
+      <div class="product-card-head">
+        <h3 class="product-card-name">${escapeHtml(dessert.name)}</h3>
+        <span class="product-card-price">${escapeHtml(dessert.price)}</span>
+      </div>
+      <p class="product-card-description">${escapeHtml(dessert.description)}</p>
     </article>
   `).join("");
 }

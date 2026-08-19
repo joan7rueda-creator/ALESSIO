@@ -172,6 +172,17 @@ p {
   padding-bottom: 12px;
 }
 
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-logo {
+  height: 48px;
+  width: auto;
+}
+
 .brand-name {
   font-family: var(--font-display);
   font-weight: 700;
@@ -566,6 +577,12 @@ p {
   grid-template-columns: 1fr;
   gap: 32px;
   margin-bottom: 30px;
+}
+
+.footer-logo {
+  height: 76px;
+  width: auto;
+  margin-bottom: 12px;
 }
 
 .footer-brand .brand-name {
