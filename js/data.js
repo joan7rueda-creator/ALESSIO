@@ -173,7 +173,9 @@ const EXTRAS = [
    4. PRODUCTES ITALIANS PER EMPORTAR
    Pendent d'incorporar el llistat definitiu (pasta, embotits,
    formatges, vins...). Afegeix aquí cada producte amb aquest format:
-   { name: "Nom del producte", description: "Breu descripció", price: "0,00€" }
+   { name: "Nom del producte", description: "Breu descripció", price: "0,00€", image: "assets/img/nom-fitxer.jpg" }
+   El camp "image" és opcional: si no s'indica, es mostra un
+   monograma decoratiu en el seu lloc.
    ========================================================= */
 const PRODUCTS = [
   // Exemple (elimina'l o edita'l quan tinguis els productes reals):
@@ -182,7 +184,7 @@ const PRODUCTS = [
 
 /* =========================================================
    5. POSTRES ARTESANALS
-   Mateix format que PRODUCTS: { name, description, price }
+   Mateix format que PRODUCTS: { name, description, price, image? }
    ========================================================= */
 const DESSERTS = [
   { name: "Tiramisù de pistacchio", price: "6€", description: "Crumble trencat, mascarpone, crema de festuc de Bronte." },

@@ -3,6 +3,11 @@
 Web d'una sola pàgina per a Pizzeria di Alessio (Sant Celoni, Barcelona), negoci exclusiu
 de **take away**. HTML, CSS i JavaScript purs, sense frameworks ni dependències de build.
 
+**Direcció visual:** "trattoria premium" — fons verd bosc fosc (`#0f2b22`), accents
+daurats (`#c9974e`), text crema (`#f5f1e8`), tipografia script (Alex Brush) per al nom
+de marca, serif italitzada (Cormorant Garamond) per als titulars i sans-serif neta
+(Jost) per al text de lectura. Separadors decoratius daurats entre seccions.
+
 ## Estructura
 
 ```
@@ -21,7 +26,9 @@ Obre `js/data.js` i edita:
 - **`MENU`** — pizzes de la carta, agrupades per categoria.
 - **`EXTRAS`** — ingredients addicionals i el seu preu.
 - **`PRODUCTS`** — productes italians per emportar (pasta, embotits, formatges, vins...).
-  Actualment buit; afegeix objectes `{ name, description, price }`.
+  Actualment buit; afegeix objectes `{ name, description, price, image? }`.
+  El camp `image` és opcional (ruta a `assets/img/...`); sense ell es mostra un
+  monograma decoratiu en el seu lloc.
 - **`DESSERTS`** — postres artesanals, mateix format que `PRODUCTS`.
 
 ## Pendent d'afegir (marcat amb `TODO` a `js/data.js`)

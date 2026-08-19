@@ -114,15 +114,7 @@ function renderProducts() {
   }
 
   if (emptyMsg) emptyMsg.hidden = true;
-  container.innerHTML = PRODUCTS.map((product, index) => `
-    <article class="product-card reveal" style="${staggerStyle(index)}">
-      <div class="product-card-head">
-        <h3 class="product-card-name">${escapeHtml(product.name)}</h3>
-        <span class="product-card-price">${escapeHtml(product.price)}</span>
-      </div>
-      <p class="product-card-description">${escapeHtml(product.description)}</p>
-    </article>
-  `).join("");
+  container.innerHTML = PRODUCTS.map((product, index) => renderProductCard(product, index)).join("");
 }
 
 /* ---------- Postres artesanals ---------- */
@@ -130,15 +122,29 @@ function renderDesserts() {
   const container = document.getElementById("desserts-list");
   if (!container) return;
 
-  container.innerHTML = DESSERTS.map((dessert, index) => `
+  container.innerHTML = DESSERTS.map((dessert, index) => renderProductCard(dessert, index)).join("");
+}
+
+/* Targeta compartida per a productes i postres.
+   Si l'objecte inclou "image" (ruta a assets/img/...), es mostra la
+   foto; si no, es mostra un monograma decoratiu com a marcador. */
+function renderProductCard(item, index) {
+  const media = item.image
+    ? `<img src="${escapeAttr(item.image)}" alt="${escapeAttr(item.name)}" loading="lazy" />`
+    : `<span class="product-card-monogram" aria-hidden="true">${escapeHtml((item.name || "?").charAt(0))}</span>`;
+
+  return `
     <article class="product-card reveal" style="${staggerStyle(index)}">
-      <div class="product-card-head">
-        <h3 class="product-card-name">${escapeHtml(dessert.name)}</h3>
-        <span class="product-card-price">${escapeHtml(dessert.price)}</span>
+      <div class="product-card-media">${media}</div>
+      <div class="product-card-body">
+        <div class="product-card-head">
+          <h3 class="product-card-name">${escapeHtml(item.name)}</h3>
+          <span class="product-card-price">${escapeHtml(item.price)}</span>
+        </div>
+        <p class="product-card-description">${escapeHtml(item.description)}</p>
       </div>
-      <p class="product-card-description">${escapeHtml(dessert.description)}</p>
     </article>
-  `).join("");
+  `;
 }
 
 /* ---------- Horaris ---------- */
