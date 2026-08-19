@@ -86,10 +86,11 @@ function renderMenuCard(item, index) {
           <span class="pizza-card-flip-hint" aria-hidden="true">
             <svg viewBox="0 0 24 24"><path d="M17.65 6.35A7.95 7.95 0 0 0 12 4V1L8 5l4 4V6c1.66 0 3.14.67 4.22 1.78A5.98 5.98 0 0 1 18 12c0 3.31-2.69 6-6 6a5.98 5.98 0 0 1-4.22-1.78l-1.42 1.42A7.95 7.95 0 0 0 12 20c4.42 0 8-3.58 8-8 0-2.21-.9-4.21-2.35-5.65z"/></svg>
           </span>
-          <div class="menu-card-head">
+          <div class="pizza-card-front-main">
             <h4 class="menu-card-name">${escapeHtml(item.name)}</h4>
             <span class="menu-card-price">${escapeHtml(item.price)}</span>
           </div>
+          <div class="pizza-card-front-divider" aria-hidden="true"></div>
           <p class="menu-card-ingredients">${escapeHtml(item.ingredients)}</p>
         </div>
         <div class="pizza-card-face pizza-card-back">
