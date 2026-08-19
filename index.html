@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pizzeria di Alessio — Pizzeria per emportar a Sant Celoni</title>
+  <meta name="description" content="Pizzeria di Alessio: pizzeria artesanal italiana per emportar (take away) a Sant Celoni, Barcelona. Pizzes al forn, pasta, embotits i vins italians. Truca o escriu per WhatsApp per fer la teva comanda." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="restaurant.menu" />
+  <meta property="og:title" content="Pizzeria di Alessio — Pizzeria per emportar a Sant Celoni" />
+  <meta property="og:description" content="Pizza artesanal italiana per emportar a Sant Celoni. Carta completa, productes italians i comandes per telèfon o WhatsApp." />
+  <meta property="og:locale" content="ca_ES" />
+
+  <link rel="icon" href="data:," />
+
+  <!-- Tipografies: Fraunces (títols, caràcter artesanal) + Mulish (text, alta llegibilitat) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Mulish:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top">
+        <span class="brand-name">Pizzeria <em>di Alessio</em></span>
+      </a>
+
+      <nav class="main-nav" id="main-nav" aria-label="Navegació principal">
+        <a href="#carta">Carta</a>
+        <a href="#productes">Productes</a>
+        <a href="#ubicacio">Ubicació i horaris</a>
+        <a href="#contacte">Contacte</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn-outline btn-small" id="header-call" href="tel:+34930000000" aria-label="Truca'ns per telèfon">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"/></svg>
+          Trucar
+        </a>
+        <a class="btn btn-whatsapp btn-small" id="header-whatsapp" href="#" target="_blank" rel="noopener" aria-label="Comanda per WhatsApp">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.2.2-.3.2-.5.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.2-.4.1-.2 0-.3 0-.5-.1-.1-.6-1.4-.8-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.1s.9 2.4 1.1 2.6c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.6-.6 1.8-1.3.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.4c1.4.8 3.1 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.1.8.8-3-.2-.3C4 14.7 3.6 13.4 3.6 12c0-4.6 3.8-8.4 8.4-8.4s8.4 3.8 8.4 8.4-3.8 8.4-8.4 8.4z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Obrir menú de navegació">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="hero">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <p class="hero-eyebrow">Sant Celoni · Per emportar</p>
+        <h1 class="hero-title">Pizzeria <em>di Alessio</em></h1>
+        <p class="hero-subtitle">
+          Pizza napolitana feta al moment amb ingredients d'origen italià.
+          Truca o escriu i recull la teva comanda calenteta.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary btn-large" id="hero-call" href="tel:+34930000000">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"/></svg>
+            Trucar per comandar
+          </a>
+          <a class="btn btn-whatsapp btn-large" id="hero-whatsapp" href="#" target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.2.2-.3.2-.5.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.2-.4.1-.2 0-.3 0-.5-.1-.1-.6-1.4-.8-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.1s.9 2.4 1.1 2.6c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.6-.6 1.8-1.3.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.4c1.4.8 3.1 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.1.8.8-3-.2-.3C4 14.7 3.6 13.4 3.6 12c0-4.6 3.8-8.4 8.4-8.4s8.4 3.8 8.4 8.4-3.8 8.4-8.4 8.4z"/></svg>
+            Comandar per WhatsApp
+          </a>
+        </div>
+        <p class="hero-note">Només per emportar — sense servei de taules al local.</p>
+      </div>
+    </section>
+
+    <!-- ===================== CARTA DE PIZZES ===================== -->
+    <section class="section" id="carta">
+      <div class="container">
+        <p class="section-eyebrow">La nostra carta</p>
+        <h2 class="section-title">Pizzes fetes al forn, a la manera italiana</h2>
+        <p class="section-intro">
+          Totes les nostres pizzes es preparen a l'hora i es couen al forn per emportar-te-les acabades de fer.
+        </p>
+
+        <div id="menu-list" class="menu-list"><!-- Generat per JS a partir de MENU (js/data.js) --></div>
+
+        <div class="extras-block">
+          <h3 class="extras-title">Vols afegir un extra?</h3>
+          <p class="extras-subtitle">Personalitza la teva pizza amb aquests ingredients addicionals.</p>
+          <div id="extras-list" class="extras-list"><!-- Generat per JS a partir de EXTRAS (js/data.js) --></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PRODUCTES ITALIANS ===================== -->
+    <section class="section section-alt" id="productes">
+      <div class="container">
+        <p class="section-eyebrow">Per endur-te a casa</p>
+        <h2 class="section-title">Productes italians seleccionats</h2>
+        <p class="section-intro">
+          Pasta, embotits, formatges i vins d'Itàlia, triats amb cura, per completar el teu àpat.
+        </p>
+
+        <div id="products-list" class="products-list"><!-- Generat per JS a partir de PRODUCTS (js/data.js) --></div>
+        <p id="products-empty" class="products-empty" hidden>
+          Estem preparant aquesta secció amb una selecció de productes italians. Molt aviat disponible!
+        </p>
+      </div>
+    </section>
+
+    <!-- ===================== UBICACIÓ I HORARIS ===================== -->
+    <section class="section" id="ubicacio">
+      <div class="container location-grid">
+        <div class="location-info">
+          <p class="section-eyebrow">On som</p>
+          <h2 class="section-title">Ubicació i horaris</h2>
+
+          <div class="info-block">
+            <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.4 7 11.4 7.3 11.6.2.2.5.2.7 0C12.3 21.4 20 15.4 20 10c0-4.4-3.6-8-8-8zm0 10.8c-1.5 0-2.8-1.3-2.8-2.8S10.5 7.2 12 7.2s2.8 1.3 2.8 2.8-1.3 2.8-2.8 2.8z"/></svg> Adreça</h3>
+            <p id="address-text">Carrer Major, XX, 08470 Sant Celoni (Barcelona)</p>
+            <a class="link-arrow" id="maps-link" href="#" target="_blank" rel="noopener">Com arribar-hi →</a>
+          </div>
+
+          <div class="info-block">
+            <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm.75 5v5.4l4.2 2.5-.75 1.3L11 13V7h1.75z"/></svg> Horari</h3>
+            <ul id="hours-list" class="hours-list"><!-- Generat per JS a partir de CONFIG.hours (js/data.js) --></ul>
+            <p class="takeaway-note">Servei exclusiu per emportar. No disposem de servei de taules al local.</p>
+          </div>
+        </div>
+
+        <div class="location-map">
+          <iframe
+            id="maps-embed"
+            title="Mapa d'ubicació de Pizzeria di Alessio a Sant Celoni"
+            src=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACTE / COMANDA ===================== -->
+    <section class="section section-alt section-contact" id="contacte">
+      <div class="container contact-content">
+        <p class="section-eyebrow">Fes la teva comanda</p>
+        <h2 class="section-title">Truca'ns o escriu-nos per WhatsApp</h2>
+        <p class="section-intro">
+          No fem comandes per web: gestionem tots els encàrrecs per telèfon o WhatsApp perquè puguem confirmar-te
+          l'hora de recollida exacta.
+        </p>
+        <div class="hero-actions contact-actions">
+          <a class="btn btn-primary btn-large" id="contact-call" href="tel:+34930000000">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"/></svg>
+            <span id="contact-call-text">Trucar ara</span>
+          </a>
+          <a class="btn btn-whatsapp btn-large" id="contact-whatsapp" href="#" target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.2.2-.3.2-.5.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.2-.4.1-.2 0-.3 0-.5-.1-.1-.6-1.4-.8-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.1s.9 2.4 1.1 2.6c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.6-.6 1.8-1.3.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.4c1.4.8 3.1 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.1.8.8-3-.2-.3C4 14.7 3.6 13.4 3.6 12c0-4.6 3.8-8.4 8.4-8.4s8.4 3.8 8.4 8.4-3.8 8.4-8.4 8.4z"/></svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <p class="brand-name">Pizzeria <em>di Alessio</em></p>
+        <p id="footer-address">Carrer Major, XX, 08470 Sant Celoni (Barcelona)</p>
+        <p id="footer-phone"><a href="tel:+34930000000">93 000 00 00</a></p>
+      </div>
+
+      <div class="footer-hours">
+        <h3>Horari</h3>
+        <ul id="footer-hours-list" class="hours-list hours-list-compact"><!-- Generat per JS --></ul>
+      </div>
+
+      <div class="footer-social" id="footer-social"><!-- Generat per JS a partir de CONFIG.social --></div>
+    </div>
+
+    <div class="container footer-note-wrap">
+      <p class="footer-quality-note" id="footer-quality-note"></p>
+      <p class="footer-copy">&copy; <span id="footer-year"></span> Pizzeria di Alessio — Sant Celoni. Servei exclusiu per emportar.</p>
+    </div>
+  </footer>
+
+  <!-- ===================== BOTÓ FLOTANT WHATSAPP ===================== -->
+  <a class="floating-whatsapp" id="floating-whatsapp" href="#" target="_blank" rel="noopener" aria-label="Comanda per WhatsApp">
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.2.2-.3.2-.5.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.2-.4.1-.2 0-.3 0-.5-.1-.1-.6-1.4-.8-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.1s.9 2.4 1.1 2.6c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.6-.6 1.8-1.3.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.4c1.4.8 3.1 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.1.8.8-3-.2-.3C4 14.7 3.6 13.4 3.6 12c0-4.6 3.8-8.4 8.4-8.4s8.4 3.8 8.4 8.4-3.8 8.4-8.4 8.4z"/></svg>
+  </a>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,750 @@
+/* =========================================================
+   Pizzeria di Alessio — Estils
+   Mobile-first. Paleta rústica italiana: terracota, verd oliva,
+   crema/beige i marró carbó per als textos.
+   ========================================================= */
+
+:root {
+  --color-terracotta: #c1502e;
+  --color-terracotta-dark: #a13f22;
+  --color-olive: #6b7a3a;
+  --color-olive-dark: #52601f;
+  --color-cream: #faf3e6;
+  --color-cream-alt: #f2e8d5;
+  --color-charcoal: #2c2420;
+  --color-charcoal-soft: #4a3f38;
+  --color-white: #fffdf9;
+  --color-whatsapp: #25a366;
+  --color-whatsapp-dark: #1e8a54;
+
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Mulish", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --radius: 14px;
+  --radius-sm: 8px;
+  --shadow-card: 0 6px 20px rgba(44, 36, 32, 0.1);
+  --max-width: 1140px;
+}
+
+/* ---------- Reset bàsic ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-charcoal);
+  background-color: var(--color-cream);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  color: var(--color-terracotta-dark);
+  margin: 0 0 0.4em;
+  line-height: 1.15;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.icon {
+  width: 1.1em;
+  height: 1.1em;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+/* ---------- Botons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-family: var(--font-body);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-small {
+  padding: 8px 16px;
+  font-size: 0.78rem;
+}
+
+.btn-large {
+  padding: 15px 28px;
+  font-size: 0.95rem;
+}
+
+.btn-primary {
+  background-color: var(--color-terracotta);
+  color: var(--color-white);
+  box-shadow: 0 4px 14px rgba(193, 80, 46, 0.35);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-terracotta-dark);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border-color: var(--color-terracotta);
+  color: var(--color-terracotta-dark);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-terracotta);
+  color: var(--color-white);
+}
+
+.btn-whatsapp {
+  background-color: var(--color-whatsapp);
+  color: var(--color-white);
+  box-shadow: 0 4px 14px rgba(37, 163, 102, 0.35);
+}
+
+.btn-whatsapp:hover {
+  background-color: var(--color-whatsapp-dark);
+}
+
+.link-arrow {
+  font-weight: 700;
+  color: var(--color-olive-dark);
+  border-bottom: 2px solid var(--color-olive);
+  padding-bottom: 1px;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-cream);
+  border-bottom: 3px solid var(--color-olive);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.brand-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: var(--color-terracotta-dark);
+}
+
+.brand-name em {
+  font-style: italic;
+  color: var(--color-olive-dark);
+}
+
+.main-nav {
+  display: none;
+}
+
+.header-actions {
+  display: none;
+  gap: 10px;
+}
+
+.nav-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav-toggle span {
+  display: block;
+  height: 3px;
+  border-radius: 2px;
+  background-color: var(--color-charcoal);
+}
+
+.main-nav.is-open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: var(--color-cream);
+  border-bottom: 3px solid var(--color-olive);
+  padding: 8px 20px 18px;
+  gap: 4px;
+}
+
+.main-nav.is-open a {
+  padding: 10px 0;
+  font-weight: 700;
+  border-bottom: 1px solid var(--color-cream-alt);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  padding: 90px 0 70px;
+  background:
+    linear-gradient(rgba(44, 24, 16, 0.6), rgba(44, 24, 16, 0.72)),
+    repeating-linear-gradient(135deg, #7a3420 0px, #7a3420 2px, #6b2c1a 2px, #6b2c1a 40px);
+  background-blend-mode: multiply;
+  color: var(--color-white);
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Quan afegeixis la teva foto de fons, descomenta i edita la línia següent
+   dins de .hero (o afegeix-la en línia amb style="background-image:..."):
+   background-image: url("../assets/img/hero.jpg"); background-size: cover; background-position: center;
+*/
+
+.hero-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--color-cream-alt);
+  margin-bottom: 10px;
+}
+
+.hero-title {
+  font-size: clamp(2.4rem, 9vw, 4.2rem);
+  color: var(--color-white);
+  margin-bottom: 0.3em;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: #f0c987;
+}
+
+.hero-subtitle {
+  max-width: 520px;
+  margin: 0 auto 1.6em;
+  font-size: 1.05rem;
+  color: var(--color-cream-alt);
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.hero-note {
+  margin-top: 20px;
+  font-size: 0.85rem;
+  color: rgba(250, 243, 230, 0.75);
+  font-style: italic;
+}
+
+/* ---------- Seccions genèriques ---------- */
+.section {
+  padding: 64px 0;
+}
+
+.section-alt {
+  background-color: var(--color-cream-alt);
+}
+
+.section-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 800;
+  font-size: 0.78rem;
+  color: var(--color-olive-dark);
+  margin-bottom: 6px;
+}
+
+.section-title {
+  font-size: clamp(1.7rem, 5vw, 2.3rem);
+}
+
+.section-intro {
+  max-width: 60ch;
+  color: var(--color-charcoal-soft);
+}
+
+/* ---------- Carta de pizzes ---------- */
+.menu-category {
+  margin-bottom: 40px;
+}
+
+.menu-category-title {
+  font-size: 1.4rem;
+  padding-bottom: 10px;
+  border-bottom: 3px solid var(--color-olive);
+  display: inline-block;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.menu-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  box-shadow: var(--shadow-card);
+  border-left: 5px solid var(--color-terracotta);
+}
+
+.menu-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.menu-card-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--color-charcoal);
+}
+
+.menu-card-price {
+  font-weight: 800;
+  color: var(--color-terracotta-dark);
+  white-space: nowrap;
+  font-size: 1.05rem;
+}
+
+.menu-card-ingredients {
+  color: var(--color-charcoal-soft);
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+/* ---------- Extres ---------- */
+.extras-block {
+  margin-top: 56px;
+  padding-top: 40px;
+  border-top: 2px dashed var(--color-olive);
+}
+
+.extras-title {
+  font-size: 1.5rem;
+}
+
+.extras-subtitle {
+  color: var(--color-charcoal-soft);
+}
+
+.extras-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.extras-group-title {
+  font-weight: 800;
+  color: var(--color-olive-dark);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  margin-bottom: 10px;
+}
+
+.extras-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.extra-chip {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-cream-alt);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.extra-chip strong {
+  color: var(--color-terracotta-dark);
+  margin-left: 4px;
+}
+
+/* ---------- Productes italians ---------- */
+.products-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.product-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  box-shadow: var(--shadow-card);
+  border-left: 5px solid var(--color-olive);
+}
+
+.product-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.product-card-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.product-card-price {
+  font-weight: 800;
+  color: var(--color-olive-dark);
+  white-space: nowrap;
+}
+
+.product-card-description {
+  color: var(--color-charcoal-soft);
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+.products-empty {
+  margin-top: 24px;
+  padding: 22px;
+  background-color: var(--color-white);
+  border-radius: var(--radius);
+  text-align: center;
+  color: var(--color-charcoal-soft);
+  font-style: italic;
+}
+
+/* ---------- Ubicació ---------- */
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+}
+
+.info-block {
+  margin-bottom: 28px;
+}
+
+.info-block h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.1rem;
+  color: var(--color-charcoal);
+}
+
+.info-block .icon {
+  color: var(--color-terracotta);
+  width: 1.3em;
+  height: 1.3em;
+}
+
+.hours-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--color-cream-alt);
+  font-size: 0.95rem;
+}
+
+.hours-list li span:first-child {
+  font-weight: 700;
+}
+
+.hours-list li.closed span:last-child {
+  color: var(--color-charcoal-soft);
+  font-style: italic;
+}
+
+.takeaway-note {
+  margin-top: 14px;
+  font-size: 0.85rem;
+  color: var(--color-charcoal-soft);
+  font-style: italic;
+}
+
+.location-map {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  min-height: 280px;
+}
+
+.location-map iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  border: 0;
+}
+
+/* ---------- Contacte ---------- */
+.section-contact {
+  text-align: center;
+}
+
+.contact-content .section-intro {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-actions {
+  margin-top: 20px;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background-color: var(--color-charcoal);
+  color: var(--color-cream-alt);
+  padding: 48px 0 20px;
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  margin-bottom: 30px;
+}
+
+.footer-brand .brand-name {
+  color: var(--color-white);
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.footer-brand .brand-name em {
+  color: #f0c987;
+  font-style: italic;
+}
+
+.footer-brand p {
+  color: rgba(250, 243, 230, 0.75);
+  font-size: 0.9rem;
+}
+
+.footer-brand a {
+  color: var(--color-cream);
+  font-weight: 700;
+}
+
+.footer-hours h3 {
+  color: var(--color-white);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.hours-list-compact li {
+  border-bottom-color: rgba(250, 243, 230, 0.12);
+  font-size: 0.85rem;
+  color: rgba(250, 243, 230, 0.8);
+}
+
+.footer-social {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.footer-social a {
+  border: 1px solid rgba(250, 243, 230, 0.3);
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.footer-note-wrap {
+  border-top: 1px solid rgba(250, 243, 230, 0.15);
+  padding-top: 20px;
+}
+
+.footer-quality-note {
+  font-style: italic;
+  font-size: 0.85rem;
+  color: #f0c987;
+  max-width: 60ch;
+}
+
+.footer-copy {
+  font-size: 0.78rem;
+  color: rgba(250, 243, 230, 0.55);
+  margin-bottom: 0;
+}
+
+/* ---------- Botó flotant WhatsApp ---------- */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--color-whatsapp);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(37, 163, 102, 0.45);
+  z-index: 90;
+  transition: transform 0.15s ease;
+}
+
+.floating-whatsapp:hover {
+  transform: scale(1.08);
+}
+
+.floating-whatsapp .icon {
+  width: 1.7em;
+  height: 1.7em;
+}
+
+/* =========================================================
+   Breakpoints
+   ========================================================= */
+@media (min-width: 640px) {
+  .hero-actions,
+  .contact-actions {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .menu-grid,
+  .products-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .extras-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .main-nav {
+    display: flex;
+    gap: 24px;
+    font-weight: 700;
+    font-size: 0.92rem;
+  }
+
+  .main-nav a {
+    padding: 6px 0;
+    border-bottom: 2px solid transparent;
+  }
+
+  .main-nav a:hover {
+    border-bottom-color: var(--color-terracotta);
+  }
+
+  .header-actions {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .location-grid {
+    grid-template-columns: 1fr 1.1fr;
+    align-items: start;
+  }
+
+  .location-map {
+    min-height: 420px;
+    position: sticky;
+    top: 100px;
+  }
+
+  .location-map iframe {
+    min-height: 420px;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1.2fr 1fr 1fr;
+  }
+
+  .extras-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .menu-grid,
+  .products-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ---------- Accessibilitat: reducció de moviment ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .btn,
+  .floating-whatsapp {
+    transition: none;
+  }
+}
