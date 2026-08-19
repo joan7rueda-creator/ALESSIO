@@ -11,10 +11,10 @@ de marca, serif italitzada (Cormorant Garamond) per als titulars i sans-serif ne
 ## Estructura
 
 ```
-index.html          Estructura de la pàgina (hero, carta, productes, ubicació, contacte)
+index.html          Estructura de la pàgina (hero, carta, postres, ubicació, contacte)
 css/styles.css       Tots els estils (mobile-first, responsive)
 js/data.js           ÚNIC fitxer a editar per canviar textos, preus, telèfon, horaris...
-js/main.js           Lògica: renderitza la carta/productes a partir de data.js, menú mòbil
+js/main.js           Lògica: renderitza la carta/postres a partir de data.js, menú mòbil
 assets/img/          Fotografies (logo, hero, etc.) — encara pendents d'afegir
 ```
 
@@ -27,11 +27,8 @@ Obre `js/data.js` i edita:
   un camp `image` opcional (foto que es veu en girar la targeta); sense ell es
   mostra una foto genèrica de pizza.
 - **`EXTRAS`** — ingredients addicionals i el seu preu.
-- **`PRODUCTS`** — productes italians per emportar (pasta, embotits, formatges, vins...).
-  Actualment buit; afegeix objectes `{ name, description, price, image? }`.
-  El camp `image` és opcional (ruta a `assets/img/...`); sense ell es mostra un
-  monograma decoratiu en el seu lloc.
-- **`DESSERTS`** — postres artesanals, mateix format que `PRODUCTS`.
+- **`DESSERTS`** — postres artesanals. Cada item admet un camp `image` opcional
+  (ruta a `assets/img/...`); sense ell es mostra un monograma decoratiu.
 
 ## Pendent d'afegir (marcat amb `TODO` a `js/data.js`)
 
@@ -48,8 +45,7 @@ Obre `js/data.js` i edita:
       les pizzes (excepte la Margherita) mostren una foto genèrica de pizza al
       revers; afegeix `image: "assets/img/nom.jpg"` a cada pizza de `MENU` quan
       tinguis la fotografia real.
-- [ ] Més fotografies pròpies (pizzes, productes, local...) a `assets/img/`
-- [ ] Llistat definitiu de productes italians per emportar (`PRODUCTS` a `js/data.js`)
+- [ ] Més fotografies pròpies (pizzes, local...) a `assets/img/`
 - [ ] Substituir el logo actual (extret d'una captura/gravació de pantalla) per l'arxiu
       original en alta qualitat quan el tinguis disponible
 

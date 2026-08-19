@@ -733,7 +733,7 @@ p {
   margin-left: 4px;
 }
 
-/* ---------- Productes italians / postres ---------- */
+/* ---------- Postres (targeta amb foto o monograma) ---------- */
 .products-list {
   display: grid;
   grid-template-columns: 1fr;
@@ -807,17 +807,6 @@ p {
   color: var(--color-cream-soft);
   font-size: 0.92rem;
   margin: 0;
-}
-
-.products-empty {
-  margin-top: 28px;
-  padding: 26px;
-  background-color: var(--color-surface);
-  border: 1px dashed var(--color-gold-soft);
-  border-radius: var(--radius);
-  text-align: center;
-  color: var(--color-cream-soft);
-  font-style: italic;
 }
 
 /* ---------- Ubicació ---------- */

@@ -1,11 +1,10 @@
 /**
- * data.js — Dades del negoci, la carta de pizzes i els productes italians.
+ * data.js — Dades del negoci, la carta de pizzes i els postres.
  *
  * Aquest és l'ÚNIC fitxer que hauries de tocar per fer canvis bàsics:
  * - Telèfon, WhatsApp, adreça i horaris -> objecte CONFIG
  * - Pizzes de la carta -> array MENU
  * - Extres (ingredients addicionals) -> array EXTRAS
- * - Productes italians per emportar -> array PRODUCTS
  * - Postres artesanals -> array DESSERTS
  *
  * No cal tocar cap altre fitxer (.html / .css / .js) per afegir,
@@ -173,21 +172,10 @@ const EXTRAS = [
 ];
 
 /* =========================================================
-   4. PRODUCTES ITALIANS PER EMPORTAR
-   Pendent d'incorporar el llistat definitiu (pasta, embotits,
-   formatges, vins...). Afegeix aquí cada producte amb aquest format:
-   { name: "Nom del producte", description: "Breu descripció", price: "0,00€", image: "assets/img/nom-fitxer.jpg" }
-   El camp "image" és opcional: si no s'indica, es mostra un
-   monograma decoratiu en el seu lloc.
-   ========================================================= */
-const PRODUCTS = [
-  // Exemple (elimina'l o edita'l quan tinguis els productes reals):
-  // { name: "Pasta fresca all'uovo", description: "Tagliatelle artesanals italianes, 250g.", price: "4,50€" },
-];
-
-/* =========================================================
-   5. POSTRES ARTESANALS
-   Mateix format que PRODUCTS: { name, description, price, image? }
+   4. POSTRES ARTESANALS
+   Cada item: { name, description, price, image? }
+   El camp "image" és opcional (ruta a assets/img/...): si no
+   s'indica, es mostra un monograma decoratiu en el seu lloc.
    ========================================================= */
 const DESSERTS = [
   { name: "Tiramisù de pistacchio", price: "6€", description: "Crumble trencat, mascarpone, crema de festuc de Bronte." },

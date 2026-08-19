@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
   applyBusinessInfo();
   renderMenu();
   renderExtras();
-  renderProducts();
   renderDesserts();
   renderHours();
   renderSocial();
@@ -147,34 +146,17 @@ function renderExtras() {
   `).join("");
 }
 
-/* ---------- Productes italians ---------- */
-function renderProducts() {
-  const container = document.getElementById("products-list");
-  const emptyMsg = document.getElementById("products-empty");
-  if (!container) return;
-
-  if (!PRODUCTS || PRODUCTS.length === 0) {
-    container.innerHTML = "";
-    if (emptyMsg) emptyMsg.hidden = false;
-    return;
-  }
-
-  if (emptyMsg) emptyMsg.hidden = true;
-  container.innerHTML = PRODUCTS.map((product, index) => renderProductCard(product, index)).join("");
-}
-
 /* ---------- Postres artesanals ---------- */
 function renderDesserts() {
   const container = document.getElementById("desserts-list");
   if (!container) return;
 
-  container.innerHTML = DESSERTS.map((dessert, index) => renderProductCard(dessert, index)).join("");
+  container.innerHTML = DESSERTS.map((dessert, index) => renderDessertCard(dessert, index)).join("");
 }
 
-/* Targeta compartida per a productes i postres.
-   Si l'objecte inclou "image" (ruta a assets/img/...), es mostra la
+/* Si l'objecte inclou "image" (ruta a assets/img/...), es mostra la
    foto; si no, es mostra un monograma decoratiu com a marcador. */
-function renderProductCard(item, index) {
+function renderDessertCard(item, index) {
   const media = item.image
     ? `<img src="${escapeAttr(item.image)}" alt="${escapeAttr(item.name)}" loading="lazy" />`
     : `<span class="product-card-monogram" aria-hidden="true">${escapeHtml((item.name || "?").charAt(0))}</span>`;
